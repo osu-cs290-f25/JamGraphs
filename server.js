@@ -125,7 +125,7 @@ app.get("/account", function (req, res) {
 })
 
 app.get("/feed", function (req, res) {
-    res.render("feed")
+    res.render("feed") //needs to get all posts -> post need getAllPosts()
 })
 
 app.get("/about", function (req, res) {

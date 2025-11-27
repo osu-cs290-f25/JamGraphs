@@ -1,0 +1,20 @@
+main {
+    display: grid;
+    grid-template: 
+        "filters feed" 1fr
+        / 15em 1fr;
+    justify-items: stretch;
+}
+
+.feed-container {
+    grid-area: feed;
+}
+
+.filter-container {
+    grid-area: filters;
+    background: rgba(52, 48, 62, 0.25);
+    padding: 20px;
+    border: 1px solid rgba(255, 215, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+}
