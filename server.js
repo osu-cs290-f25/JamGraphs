@@ -98,7 +98,7 @@ app.get('/callback', async function(req, res) {
     }
     account.newUser(req.session.userId, req.session.refresh_token)
 
-    res.redirect('/account') //since userId exists, should render account
+    res.redirect('account.html') //since userId exists, should render account
   } catch (err) {
     console.error(err)
     res.status(500).send('Error during token exchange or fetching profile');
@@ -114,23 +114,6 @@ app.get('/callback', async function(req, res) {
 */
 
 
-
-//render pages
-app.get("/account", function (req, res) {
-  if(req.session.userId) {
-    res.render("account")
-  } else {
-    res.redirect("/index.html")
-  } 
-})
-
-app.get("/feed", function (req, res) {
-    res.render("feed") //needs to get all posts -> post need getAllPosts()
-})
-
-app.get("/about", function (req, res) {
-    res.render("about")
-})
 
 app.listen(8000, function () {
   console.log("== Server is listening on port 8000")
