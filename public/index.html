@@ -5,23 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JamGraphs</title>
     <link rel="stylesheet" href="style.css">
+    <script src="ejs.min.js" defer></script>
+    <script src="headerTemplate.js" defer></script>
+    <script src="index.js" defer></script>
 </head>
 <body>
 
     <!-- NAVIGATION BAR -->
-    <header class="nav-bar">
-        <div class="logo-area">
-            <img src="logo.png" class="logo-img" alt="JamGraphs Logo">
-            <div class="logo" id="logoText">JamGraphs</div>
-        </div>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="account.html">Account</a>
-            <a href="visualizations.html">Visualizations</a>
-            <a href="feed.html">Feed</a>
-            <a href="about.html">About</a>
-        </nav>
-    </header>
+    <header class="nav-bar header-container"></header>
 
     <!-- INTRO -->
     <main>
@@ -32,7 +23,7 @@
                 connect your Spotify account and explore beautiful graphs based on 
                 your listening habits.
             </p>
-            <a href="/login" class="btn pulse">Connect with Spotify</a>
+            <a href="/login" class="btn pulse" id="login-button">Connect with Spotify</a>
         </section>
     </main>
 

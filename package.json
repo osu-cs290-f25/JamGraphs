@@ -93,7 +93,9 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node server.js",
+    "build": "node compiler.js views/header.ejs public/headerTemplate.js",
+    "prestart": "cp node_modules/ejs/ejs.min.js public/ && npm run build"
   },
   "repository": {
     "type": "git",

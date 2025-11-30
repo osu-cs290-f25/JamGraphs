@@ -38,10 +38,6 @@ app.use(async function(req, res, next) {
         });
       }
     }
-
-    if(req.session.access_token && ["/", "/index", "/index.html"].includes(req.path)) {
-      return res.redirect('account.html'); // prevent next()
-    }
   }
 
   next();
@@ -60,6 +56,14 @@ app.get('/callback', async function(req, res) {
     return res.status(500).send("Internal Server Error");
   }
   res.redirect('account.html');
+});
+
+app.get("/api/loggedIn", function(req, res) {
+    if (req.session && req.session.access_token) {
+        res.json(true);
+    } else {
+        res.json(false);
+    }
 });
 
 app.listen(8000, function () {

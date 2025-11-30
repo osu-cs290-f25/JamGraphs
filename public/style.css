@@ -28,12 +28,14 @@ body {
     padding: 18px 40px;
     background: rgba(0,0,0,0.25);
     border-bottom: 1px solid rgba(255,255,255,0.1);
+    min-height: 80px;
 }
 
 .logo-area {
     display: flex;
     align-items: center;
     gap: 15px;
+    cursor: pointer;
 }
 
 .logo-img {
@@ -47,7 +49,6 @@ body {
     color: #66FCF1;
     text-shadow: 0 0 12px #66FCF1;
     user-select: none;
-    cursor: default;
     margin-left: 6px;
 }
 
@@ -60,7 +61,7 @@ body {
     margin-left: 22px;
     color: rgb(220,220,230);
     text-decoration: none;
-    font-size: 16px;
+    font-size: 20px;
     transition: 0.3s;
 }
 
@@ -111,6 +112,10 @@ body {
 
 .pulse {
     animation: pulseGlow 2s infinite ease-in-out;
+}
+
+#login-button {
+    display: none;;
 }
 
 @keyframes pulseGlow {
