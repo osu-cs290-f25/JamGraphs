@@ -6,16 +6,8 @@ document.addEventListener("DOMContentLoaded", function() {
     document.querySelector(".header-container").innerHTML = headerHtml;
 
     const loginButton = document.getElementById("login-button");
-    if(loginButton) {
-        fetch("/api/loggedIn").then(function(res) {
-            return res.json();
-        }).then(function(loggedIn) {
-            if(!loggedIn) {
-                loginButton.style.display = "block";
-            }
-        }).catch(function(err) {
-            console.error("Error checking login status:", err);
-        });
+    if(loginButton && (!req.session || !req.session.access_token)) {
+        loginButton.style.display = "block";
     }
 
     const logo_area = document.querySelector(".logo-area");
