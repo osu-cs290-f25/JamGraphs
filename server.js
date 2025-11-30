@@ -66,6 +66,14 @@ app.get("/visualizations", async function(req, res) {
   }
 })
 
+app.get("/api/loggedIn", function(req, res) {
+    if (req.session && req.session.access_token) {
+        res.json(true);
+    } else {
+        res.json(false);
+    }
+});
+
 app.listen(8000, function () {
   console.log("== Server is listening on port 8000");
 });
