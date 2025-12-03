@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account - JamGraphs</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="ejs.min.js" defer></script>
+    <script src="headerTemplate.js" defer></script>
+    <script src="index.js" defer></script>
+</head>
+
+<body class="template1-page-container">
+
+<header class="nav-bar">
+    <div class="logo-area">
+        <img src="images/logo.png" class="logo-img">
+        <div class="logo">JamGraphs</div>
+    </div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="/account">Account</a>
+        <a href="/visualizations">Visualizations</a>
+        <a href="feed.html">Feed</a>
+        <a href="about.html">About</a>
+    </nav>
+</header>
+
+<main class="account-main-container">
+    <aside class="account-info-container">
+        <h2>My Account</h2>
+        <img class="account-pfp" src="<%- user.pfp %>">
+        <p class="account-username"><%- user.username %></p>
+        <a href="/logout" class="btn" id="logout-button">Logout</a>
+    </aside>
+
+    <div class="account-posts-container">
+        <% if (posts.length) { %>
+            <% posts.forEach(function(post) { %>
+                <%- include("post", {
+                    "id": post.id,
+                    "imgUrl": post.imgUrl,
+                    "dateUploaded": post.dateUploaded,
+                    "title": post.title,
+                    "description": post.description,
+                    "numLikes": post.numLikes
+                }) %>
+            <% }) %>
+        <% } else { %>
+            <p class="no-posts-message">You have no posts yet!</p>
+        <% } %>
+    </div>
+</main>
+
+<footer class="footer">
+    <p>© 2025 JamGraph</p>
+</footer>
+
+</body>
+</html>

@@ -2,9 +2,6 @@
 console.log("JS loaded");
 
 document.addEventListener("DOMContentLoaded", function() {
-    const headerHtml = window.templates.header();
-    document.querySelector(".header-container").innerHTML = headerHtml;
-
     const loginButton = document.getElementById("login-button");
     if(loginButton) {
         fetch("/api/loggedIn").then(function(res) {

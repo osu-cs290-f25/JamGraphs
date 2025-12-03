@@ -186,7 +186,7 @@ body {
 
 
 /* VISUALIZATION PAGE */
-.visual-page-container {
+.template1-page-container {
     margin: 0;
     padding: 0;
     min-height: 100vh;
@@ -310,3 +310,98 @@ body {
     width: 60%;
 }
 
+
+
+/* ACCOUNT PAGE */
+.account-main-container {
+    display: grid;
+    grid-template: "info posts" / 1fr 2fr;         
+    gap: 2rem; 
+    justify-items: center;
+    margin: 5% 2rem auto;
+}
+
+.account-info-container {
+    grid-area: info;
+    background-color: rgba(48, 95, 91, 0.3);
+    box-shadow: 5px 5px 5px rgba(45, 83, 79, 0.639);;
+    border-radius: .2rem;
+    margin: 0 auto;
+    width: 80%;
+    padding: 1rem 0;
+
+    display: flex; 
+    flex-direction: column; 
+    align-items: center;
+}
+
+.account-info-container h2 {
+    margin: 0;
+    padding: 0;
+    margin-bottom: 2rem;
+}
+
+.account-pfp {
+    width: 40%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.account-username {
+    margin-bottom: 2rem;
+}
+
+#logout-button {
+    background-color: rgba(245, 25, 25, 0.589);
+    box-shadow: none;
+    padding: 8px 20px;
+    border-radius: 3px;
+}
+
+#logout-button:hover {
+    background-color: rgb(245, 25, 25);
+}
+
+.account-posts-container {
+    grid-area: posts;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    height:fit-content;
+    gap: 5%;
+}
+
+.no-posts-message {
+    font-size: 1.5rem;
+    color: rgba(71, 109, 121, 0.831);
+    font-style: italic;
+}
+
+.post-container {
+    flex: 0 1 29%; 
+    display: flex;  
+    flex-direction: column;
+    align-items: center; 
+    position: relative;
+    overflow: hidden;
+    border-radius: 5%; 
+}
+
+.post-image {
+    width: 100%;      
+    height: auto;      
+    object-fit: cover;   
+}
+
+.post-container p {
+    position: absolute;
+    bottom: 0;
+    right:0;
+    left:0;
+    margin: 0;
+    padding: 0.2rem 0.5rem; 
+    background-color: rgba(99, 160, 186, 0.811);
+    font-size: 1.5rem;
+    color: rgb(0,0,0);
+}

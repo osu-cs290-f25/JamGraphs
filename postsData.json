@@ -2,9 +2,27 @@
     {
         "post-id": 1,
         "id": 101110100,
-        "img-url": "images/posts/test.jpg",
-        "date-uploaded": "2024-06-01T12:00:00Z",
-        "title": "Test Post",
-        "description": "This is a test post for demonstration purposes."
+        "imgUrl": "images/posts/test.jpg",
+        "dateUploaded": "2024-06-01T12:00:00Z",
+        "description": "Test Post",
+        "numLikes": 11
+    },
+
+    {
+        "post-id": 2,
+        "id": 101110100,
+        "imgUrl": "images/posts/test.jpg",
+        "dateUploaded": "2024-06-01T12:00:00Z",
+        "description": "Test Post",
+        "numLikes": 11
+    },
+
+    {
+        "post-id": 3,
+        "id": 101110100,
+        "imgUrl": "images/posts/test.jpg",
+        "dateUploaded": "2024-06-01T12:00:00Z",
+        "description": "Test Post",
+        "numLikes": 11
     }
 ]
