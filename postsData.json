@@ -1,28 +1,50 @@
 [
-    {
-        "post-id": 1,
-        "id": 101110100,
-        "imgUrl": "images/posts/test.jpg",
-        "dateUploaded": "2024-06-01T12:00:00Z",
-        "description": "Test Post",
-        "numLikes": 11
-    },
-
-    {
-        "post-id": 2,
-        "id": 101110100,
-        "imgUrl": "images/posts/test.jpg",
-        "dateUploaded": "2024-06-01T12:00:00Z",
-        "description": "Test Post",
-        "numLikes": 11
-    },
-
-    {
-        "post-id": 3,
-        "id": 101110100,
-        "imgUrl": "images/posts/test.jpg",
-        "dateUploaded": "2024-06-01T12:00:00Z",
-        "description": "Test Post",
-        "numLikes": 11
-    }
+  {
+    "post-id": 1,
+    "id": 101110100,
+    "imgUrl": "images/posts/test.jpg",
+    "dateUploaded": "2024-06-01T12:00:00Z",
+    "description": "Test Post",
+    "numLikes": 11
+  },
+  {
+    "post-id": 2,
+    "id": 101110100,
+    "imgUrl": "images/posts/test.jpg",
+    "dateUploaded": "2024-06-01T12:00:00Z",
+    "description": "Test Post",
+    "numLikes": 11
+  },
+  {
+    "post-id": 3,
+    "id": "aliatus1",
+    "imgUrl": "images/posts/test.jpg",
+    "dateUploaded": "2024-06-01T12:00:00Z",
+    "description": "Test Post",
+    "numLikes": 11
+  },
+  {
+    "post-id": 4,
+    "id": "aliatus1",
+    "imgUrl": "images/posts/post_1765144573715_aliatus1.png",
+    "dateUploaded": "2025-12-07T21:56:13.717Z",
+    "description": "aliatus's top tracks",
+    "numLikes": 0
+  },
+  {
+    "post-id": 5,
+    "id": "aliatus1",
+    "imgUrl": "images/posts/post_1765144577151_aliatus1.png",
+    "dateUploaded": "2025-12-07T21:56:17.154Z",
+    "description": "aliatus's top artists",
+    "numLikes": 0
+  },
+  {
+    "post-id": 6,
+    "id": "aliatus1",
+    "imgUrl": "images/posts/post_1765144598124_aliatus1.png",
+    "dateUploaded": "2025-12-07T21:56:38.126Z",
+    "description": "aliatus's genres distribution",
+    "numLikes": 0
+  }
 ]

@@ -1,6 +1,6 @@
 const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
 var querystring = require('querystring');
-var account = require('account');
+var account = require('../account');
 
 var client_id = '0ef3e0750fd94db79804a645ca247f1b'
 var redirect_uri = 'http://127.0.0.1:8000/callback'
@@ -19,7 +19,7 @@ module.exports = {
     login: function(req, res) {
         var state = generateRandomString(16);
         req.session.state = state;
-        var scope = 'user-read-private user-read-email';
+        var scope = 'user-read-private user-read-email user-top-read';
         res.status(200).redirect('https://accounts.spotify.com/authorize?' +
             querystring.stringify({
                 response_type: 'code',
@@ -118,5 +118,47 @@ module.exports = {
             console.error(err);
             throw err;
         });
+    },
+
+    //API call for users top items
+    //Use type for 'artists' or 'tracks'
+    //Use term for 'short_term', 'medium_term', 'long_term'
+fetchTopItems: async function(req, res, token, type, term, totalLimit = 50) {
+        const batchSize = 50;
+        const promises = [];
+
+        for (let offset = 0; offset < totalLimit; offset += batchSize) {
+            const url = `https://api.spotify.com/v1/me/top/${type}?offset=${offset}&limit=${batchSize}&time_range=${term}`;
+            promises.push(
+                fetch(url, { headers: { Authorization: `Bearer ${token}` } })
+            );
+        }
+        try {
+            console.log(`Fetching ${totalLimit} items for ${type}...`);
+            const responses = await Promise.all(promises);
+            let allItems = [];
+            for (let i = 0; i < responses.length; i++) {
+                const response = responses[i];
+                if (response.ok) {
+                    const text = await response.text();
+                    if (text) {
+                        try {
+                            const data = JSON.parse(text);
+                            if (data.items) {
+                                allItems = allItems.concat(data.items);
+                            }
+                        } catch (e) {
+                        }
+                    }
+                }
+            }
+
+            console.log(`Successfully collected ${allItems.length} items.`);
+            return { items: allItems };
+
+        } catch (err) {
+            console.error("Error in fetchTopItems:", err);
+            return { items: [] };
+        }
     }
 }

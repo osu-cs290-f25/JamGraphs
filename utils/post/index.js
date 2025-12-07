@@ -27,5 +27,24 @@ module.exports = {
         }
 
         return userPosts;
-    }
+    },
+    createPost: function(userId, imgUrl, description) {
+        var posts = readPosts();
+        
+        var maxId = 0;
+        posts.forEach(p => { if(p['post-id'] > maxId) maxId = p['post-id']; });
+        
+        var newPost = {
+            "post-id": maxId + 1,
+            "id": userId,
+            "imgUrl": imgUrl,
+            "dateUploaded": new Date().toISOString(),
+            "description": description,
+            "numLikes": 0
+        };
+
+        posts.push(newPost);
+        writePosts(posts);
+        return newPost;
+      }
 }

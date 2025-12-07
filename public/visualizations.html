@@ -6,8 +6,15 @@
     <title>Visualizations - JamGraphs</title>
     <link rel="stylesheet" href="style.css">
     <script src="ejs.min.js" defer></script>
-    <script src="headerTemplate.js" defer></script>
-    <script src="index.js" defer></script>
+    <!-- <script src="headerTemplate.js" defer></script> -->
+        <!-- No headertemplate.js yet -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>      
+    <script src="index.js" defer></script> 
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <script src="visualizations.js" defer></script>
 </head>
 
 <body class="template1-page-container">
@@ -30,10 +37,10 @@
 <main class="visual-main-container">
     <div class="visual-container">
         <div class="graph-container">
-            <img src="images/posts/test.jpg" >
+            <canvas id="myChart"></canvas>
         </div>
         <img src="images/noPfp.jpg" class="post-pfp">
-        <p class="post-name">Placeholder Input</p>
+        <p class="post-name">Top tracks</p>
     </div>
     <aside class="visual-options">
         <h2>Visual Options</h2>
