@@ -67,7 +67,6 @@
     "parseurl": "^1.3.3",
     "path-to-regexp": "^8.3.0",
     "picocolors": "^1.1.1",
-    "post": "^1.0.0",
     "proxy-addr": "^2.0.7",
     "qs": "^6.14.0",
     "random-bytes": "^1.0.0",
@@ -96,7 +95,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
     "build": "",
-    "prestart": "cp node_modules/ejs/ejs.min.js public/ && npm run build"
+    "prestart": "cpx node_modules/ejs/ejs.min.js public && npm run build"
   },
   "repository": {
     "type": "git",
@@ -107,5 +106,8 @@
   "bugs": {
     "url": "https://github.com/osu-cs290-f25/final-project-music-visualization/issues"
   },
-  "homepage": "https://github.com/osu-cs290-f25/final-project-music-visualization#readme"
+  "homepage": "https://github.com/osu-cs290-f25/final-project-music-visualization#readme",
+  "devDependencies": {
+    "cpx": "^1.5.0"
+  }
 }
