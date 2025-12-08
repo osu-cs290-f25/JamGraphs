@@ -71,16 +71,16 @@ app.get("/visualizations", async function(req, res) {
 })
 
 app.get('/account', function(req, res) {
-  if(!(req.session && req.session.access_token)) {
+  if(req.session && req.session.access_token) {
+      var user = account.getUser(req.session.spotify_id);
+    var posts = post.getPosts(req.session.spotify_id);
+    res.status(200).render('accountPage', {
+      user: user,
+      posts: posts
+    });
+  } else {
     res.status(200).redirect("/?notLoggedInAlert=true");
   }
-
-  var user = account.getUser(req.session.spotify_id);
-  var posts = post.getPosts(req.session.spotify_id);
-  res.status(200).render('accountPage', {
-    user: user,
-    posts: posts
-  });
 })
 
 //Get all posts via exported function from utils/post/index.js

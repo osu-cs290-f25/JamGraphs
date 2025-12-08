@@ -30,7 +30,7 @@
     "es-object-atoms": "^1.1.1",
     "escape-html": "^1.0.3",
     "etag": "^1.8.1",
-    "express": "^5.1.0",
+    "express": "^5.2.1",
     "express-session": "^1.18.2",
     "fetch-blob": "^3.2.0",
     "filelist": "^1.0.4",
