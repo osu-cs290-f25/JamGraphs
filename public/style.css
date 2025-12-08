@@ -305,8 +305,10 @@ flex: 1;
     box-shadow: 5px 5px 5px rgba(45, 83, 79, 0.639);;
     border-radius: .2rem;
     margin: 0 auto;
-    width: 80%;
+    height: fit-content;
+    width: 65%;
     padding: 1rem 0;
+    
 
     display: flex; 
     flex-direction: column; 
@@ -347,7 +349,8 @@ flex: 1;
     flex-wrap: wrap;
     justify-content: flex-start;
     height:fit-content;
-    gap: 5%;
+    column-gap:3%;
+    row-gap:15px;
 }
 
 .no-posts-message {
@@ -357,13 +360,15 @@ flex: 1;
 }
 
 .post-container {
-    flex: 0 1 29%; 
+    flex: 0 1 30%; 
     display: flex;  
     flex-direction: column;
     align-items: center; 
     position: relative;
     overflow: hidden;
     border-radius: 5%; 
+    margin-top:5px;
+    margin-bottom:5px;
 }
 
 .post-image {
@@ -378,8 +383,8 @@ flex: 1;
     right:0;
     left:0;
     margin: 0;
-    padding: 0.2rem 0.5rem; 
-    background-color: rgba(99, 160, 186, 0.811);
+    padding: 0.5rem 0.7rem; 
+    background-color: rgba(0, 0, 0, 0.932);
     font-size: 1.5rem;
     color: rgb(224 245 255);
 }

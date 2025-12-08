@@ -15,6 +15,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 if (pfpImage && user.pfp) pfpImage.src = user.pfp;
                 if (user.username) {
                     currentUsername = user.username;
+                    currentUsername = currentUsername.charAt(0).toUpperCase() + currentUsername.slice(1); //capitalize first letter for consistency
                 }
                 const nameTag = document.querySelector('.post-name');
                 if (nameTag && user.username) nameTag.textContent = user.username;
@@ -166,7 +167,7 @@ async function updateChart() {
                 });
 
                 const imgData = canvas.toDataURL("image/png");
-
+                
                 const response = await fetch('/api/share', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
