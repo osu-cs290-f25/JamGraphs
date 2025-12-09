@@ -16,7 +16,10 @@ app.use(express.urlencoded({ extended: true, limit: '50mb' }));
 app.use(session({
   secret: 'random-secret',
   resave: false,
-  saveUninitialized: true //not sure what this is for but cant run wout it
+  saveUninitialized: false, //not sure what this is for but cant run wout it
+  cookie: {
+    sameSite: "lax"
+  }
 }));
 /*session {
     spotify_id,

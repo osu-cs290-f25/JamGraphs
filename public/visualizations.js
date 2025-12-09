@@ -8,7 +8,9 @@ document.addEventListener("DOMContentLoaded", function() {
 //Calls api to get user profile info and update pfp and name tag
     async function loadUserProfile() {
         try {
-            const response = await fetch('/api/user/profile');
+            const response = await fetch('/api/user/profile', {
+                credentials: "include"
+            });
             if (response.ok) {
                 const user = await response.json();
                 const pfpImage = document.querySelector('.post-pfp');
@@ -28,7 +30,9 @@ async function updateChart() {
         
         try {
             console.log(`Fetching data for: ${selectedOption}...`);
-            const response = await fetch(`/api/spotify/data?type=${selectedOption}&time_range=long_term`);
+            const response = await fetch(`/api/spotify/data?type=${selectedOption}&time_range=long_term`, {
+                credentials: "include"
+            });
 
             if (!response.ok) {
                 console.error("Server Error Status:", response.status);
@@ -171,6 +175,7 @@ async function updateChart() {
                 const response = await fetch('/api/share', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
+                    credentials: "include",
                     body: JSON.stringify({
                         imgData: imgData,
                         description: `${currentUsername}'s ${selectedOption.replace('-', ' ')}`

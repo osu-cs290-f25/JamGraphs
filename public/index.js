@@ -4,7 +4,9 @@ console.log("JS loaded");
 document.addEventListener("DOMContentLoaded", function() {
     const loginButton = document.getElementById("login-button");
     if(loginButton) {
-        fetch("/api/loggedIn").then(function(res) {
+        fetch("/api/loggedIn", {
+            credentials: "include"
+        }).then(function(res) {
             return res.json();
         }).then(function(loggedIn) {
             if (!loggedIn) {
