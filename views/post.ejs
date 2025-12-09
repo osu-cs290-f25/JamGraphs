@@ -1,4 +1,7 @@
-<div class="post-container" data-dateUploaded="<%= dateUploaded %>" data-numLikes="<%= numLikes %>">
+<div class="post-container" data-id="<%= id %>" data-dateUploaded="<%= dateUploaded %>" data-numLikes="<%= numLikes %>">
     <img src="<%= imgUrl %>" alt="<%= description %>" class="post-image">
-    <p><%= description %></p>
+    <p><%= description %> </p>
+    <% if(canDelete) {%>
+        <button class="btn delete_post-button">&#10060;</button>
+    <% } %>
 </div>

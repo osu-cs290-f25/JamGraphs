@@ -38,12 +38,13 @@
         <% if (posts.length) { %>
             <% posts.forEach(function(post) { %>
                 <%- include("post", {
-                    "id": post.id,
+                    "id": post["post-id"],
                     "imgUrl": post.imgUrl,
                     "dateUploaded": post.dateUploaded,
                     "title": post.title,
                     "description": post.description,
-                    "numLikes": post.numLikes
+                    "numLikes": post.numLikes,
+                    "canDelete": true
                 }) %>
             <% }) %>
         <% } else { %>

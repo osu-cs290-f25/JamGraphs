@@ -360,6 +360,7 @@ flex: 1;
 }
 
 .post-container {
+    position: relative;
     flex: 0 1 30%; 
     display: flex;  
     flex-direction: column;
@@ -390,6 +391,18 @@ flex: 1;
     font-size: 1.3rem;
     color: rgb(224 245 255);
 }
+
+.delete_post-button {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    padding: .5rem;
+    font-size: 1rem;
+    background-color: rgb(93, 104, 116);
+    box-shadow: none;
+}
+
 
 .visual-container {
 background: rgba(30, 40, 60, 0.85);

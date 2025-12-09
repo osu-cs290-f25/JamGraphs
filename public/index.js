@@ -29,3 +29,30 @@ document.addEventListener("DOMContentLoaded", function() {
         alert("To access certain features you must login!");
     }
 })
+
+const accountPostsContainer = document.querySelector(".account-posts-container");
+accountPostsContainer.addEventListener("click", function(event) {
+    if (event.target.classList.contains('delete_post-button')) {
+        const postContainer = event.target.closest(".post-container");
+        const postId = Number(postContainer.dataset.id);
+
+        fetch(`/api/posts/${postId}`, {
+            method: 'DELETE',
+            credentials: "include",
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        }).then(function(res) { 
+            return res.json();
+        }).then(function(res) {
+            if(res.success) {
+                postContainer.remove();
+                console.log(`Post ${postId} deleted`);
+            } else {
+                console.error("Failed to delete post");
+            }
+        }).catch(function(error) {
+            console.error(error);
+        });
+    }
+})

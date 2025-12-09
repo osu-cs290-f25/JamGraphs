@@ -62,5 +62,21 @@
     "dateUploaded": "2025-12-08T23:19:56.853Z",
     "description": "Dylan's genres distribution",
     "numLikes": 0
+  },
+  {
+    "post-id": 12,
+    "id": "101110100",
+    "imgUrl": "images/posts/post_1765245222201_101110100.png",
+    "dateUploaded": "2025-12-09T01:53:42.208Z",
+    "description": "Flesh123's genres distribution",
+    "numLikes": 0
+  },
+  {
+    "post-id": 13,
+    "id": "101110100",
+    "imgUrl": "images/posts/post_1765245231265_101110100.png",
+    "dateUploaded": "2025-12-09T01:53:51.271Z",
+    "description": "Flesh123's genres distribution",
+    "numLikes": 0
   }
 ]

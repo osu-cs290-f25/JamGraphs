@@ -107,6 +107,18 @@ app.get('/account', function(req, res) {
   }
 })
 
+app.delete('/api/posts/:postId', function(req, res) {
+  const postId = req.params.postId;
+
+  try {
+      post.deletePost(postId);
+      res.status(200).json({ success: true });
+  } catch (error) {
+      console.error("Server: error in deletePost", error);
+      res.status(500).json({ error: "Failed to delete post" });
+  }
+});
+
 //Get all posts via exported function from utils/post/index.js
 //Render feed.ejs with posts data
 app.get('/feed', function(req, res) {
