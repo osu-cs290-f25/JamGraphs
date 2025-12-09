@@ -47,7 +47,6 @@ accountPostsContainer.addEventListener("click", function(event) {
         }).then(function(res) {
             if(res.success) {
                 postContainer.remove();
-                console.log(`Post ${postId} deleted`);
             } else {
                 console.error("Failed to delete post");
             }

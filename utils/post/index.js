@@ -54,9 +54,6 @@ module.exports = {
   deletePost: function(postId) {
     var posts = readPosts();
 
-    console.log(typeof postId);
-
-    console.log(`Post ${postId}`);
     posts = posts.filter(function(post) { 
         return post["post-id"] !== Number(postId);
     });

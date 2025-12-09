@@ -66,16 +66,24 @@
   {
     "post-id": 12,
     "id": "101110100",
-    "imgUrl": "images/posts/post_1765245222201_101110100.png",
-    "dateUploaded": "2025-12-09T01:53:42.208Z",
-    "description": "Flesh123's genres distribution",
+    "imgUrl": "images/posts/post_1765245347331_101110100.png",
+    "dateUploaded": "2025-12-09T01:55:47.340Z",
+    "description": "Flesh123's top tracks",
     "numLikes": 0
   },
   {
     "post-id": 13,
     "id": "101110100",
-    "imgUrl": "images/posts/post_1765245231265_101110100.png",
-    "dateUploaded": "2025-12-09T01:53:51.271Z",
+    "imgUrl": "images/posts/post_1765245383946_101110100.png",
+    "dateUploaded": "2025-12-09T01:56:23.959Z",
+    "description": "Flesh123's top artists",
+    "numLikes": 0
+  },
+  {
+    "post-id": 15,
+    "id": "101110100",
+    "imgUrl": "images/posts/post_1765245390518_101110100.png",
+    "dateUploaded": "2025-12-09T01:56:30.524Z",
     "description": "Flesh123's genres distribution",
     "numLikes": 0
   }
