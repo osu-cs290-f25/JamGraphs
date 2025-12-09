@@ -54,6 +54,27 @@ app.get('/login', function(req, res) {
   spotifyAPI.login(req, res); 
 });
 
+app.get('/logout', function(req, res){
+  if (req.session) {
+    req.session.destroy(function(error) {
+      if (error) {
+          console.error("Error destroying session:", error);
+          return res.status(500).send("Failed to log out");
+      }
+
+      res.clearCookie('connect.sid', {
+          path: '/',
+          httpOnly: true,
+          sameSite: 'lax'
+      });
+
+      res.redirect('/');
+    });
+  } else {
+      res.redirect('/');
+  }
+})
+
 app.get('/callback', async function(req, res) {
   try {
     await spotifyAPI.token(req, res);
