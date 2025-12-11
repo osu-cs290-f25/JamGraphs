@@ -93,10 +93,10 @@
     "wrappy": "^1.0.2"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server.js",
-    "build": "",
-    "prestart": "cpx node_modules/ejs/ejs.min.js public && npm run build"
+    "start": "node server.js",
+    "prestart": "cpx node_modules/ejs/ejs.min.js public",
+
+    "dev": "nodemon server.js"
   },
   "repository": {
     "type": "git",
